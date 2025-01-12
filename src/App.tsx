@@ -5,11 +5,13 @@ import AboutPageAsync from './pages/AboutPage/AboutPage.async';
 import MainPageAsync from './pages/MainPage/MainPage.async';
 import { Suspense, useState } from 'react';
 import { useTheme } from './theme/useTheme';
+import { classNames } from './helpers/classNames/classNames';
+import { setHeapSnapshotNearHeapLimit } from 'node:v8';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames('app', {}, [theme])}>
       <button onClick={toggleTheme}>Toggle theme</button>
       <Link to={'/about'}>About</Link>
       <Link to={'/'}>Main</Link>
