@@ -1,4 +1,4 @@
-@forward 'variables/global' ;
+@forward 'variables/global';
 @forward 'reset';
 @forward 'themes/dark';
 @forward 'themes/light';
@@ -10,4 +10,15 @@
 
   min-height: 100vh;
   // background-color: aquamarine;
+}
+
+.page-content {
+  display: flex;
+
+  //padding: 15px;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 15px;
 }
