@@ -18,6 +18,7 @@
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
-    }
+    },
+    "types": ["jest", "@testing-library/jest-dom"]
   }
 }
