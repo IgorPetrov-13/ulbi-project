@@ -18,6 +18,7 @@
 	"Create Component": {
     "prefix": "ruc", // Префикс для вызова сниппета
     "body": [
+      "import React from 'react';",
       "import { classNames } from 'shared/lib/classNames/classNames';",
       "import cls from './${1:ComponentName}.module.scss';",
       "",
