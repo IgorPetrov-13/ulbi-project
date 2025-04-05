@@ -1,3 +1,4 @@
+import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Button, ThemeButton } from './Button';
 
@@ -18,4 +19,10 @@ export const Outline = Template.bind({});
 Outline.args = {
   children: 'OUTLINE',
   theme: ThemeButton.OUTLINE,
+};
+
+export const ClearInverted = Template.bind({});
+ClearInverted.args = {
+  children: 'CLEAR INVERTED',
+  theme: ThemeButton.CLEAR_INVERTED,
 };
