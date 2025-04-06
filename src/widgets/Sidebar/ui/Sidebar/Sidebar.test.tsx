@@ -1,20 +1,24 @@
+import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Sidebar } from './Sidebar';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('Sidebar component test', () => {
   test('Sidebar should be in the document', () => {
-    render(<Sidebar />);
+    render(
+      <BrowserRouter>
+        <Sidebar />
+      </BrowserRouter>
+    );
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
   });
 
-  //!переписать после изменения кнопки
-  test('Sidebar should have toggle button', () => {
-    render(<Sidebar />);
-    expect(screen.getByText('Toggle')).toBeInTheDocument();
-  });
-
   test('Sidebar should toggle collapsed class on button click', () => {
-    render(<Sidebar />);
+    render(
+      <BrowserRouter>
+        <Sidebar />
+      </BrowserRouter>
+    );
     const sidebarElement = screen.getByTestId('sidebar');
     const toggleButton = screen.getByTestId('sidebar-toggle');
 
