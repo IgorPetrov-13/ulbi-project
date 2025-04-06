@@ -27,6 +27,8 @@ declare module '*.jpeg' {
   export default content;
 }
 
+declare const __IS_DEV__: boolean;
+
 // global.d.ts
 // declare module '*.module.scss' {
 //   const classes: { [key: string]: string };
