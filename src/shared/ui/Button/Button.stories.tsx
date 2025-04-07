@@ -1,27 +1,32 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Button, ThemeButton } from './Button';
 
-export default {
+
+const meta: Meta<typeof Button> = {
   title: 'shared/Button',
   component: Button,
-} as ComponentMeta<typeof Button>;
+};
+export default meta;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+type Story = StoryObj<typeof Button>;
 
-export const Clear = Template.bind({});
-Clear.args = {
-  children: 'CLEAR',
-  theme: ThemeButton.CLEAR,
+export const Clear: Story = {
+  args: {
+    children: 'CLEAR',
+    theme: ThemeButton.CLEAR,
+  },
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
-  children: 'OUTLINE',
-  theme: ThemeButton.OUTLINE,
+export const Outline: Story = {
+  args: {
+    children: 'OUTLINE',
+    theme: ThemeButton.OUTLINE,
+  },
 };
 
-export const ClearInverted = Template.bind({});
-ClearInverted.args = {
-  children: 'CLEAR INVERTED',
-  theme: ThemeButton.CLEAR_INVERTED,
+export const ClearInverted: Story = {
+  args: {
+    children: 'CLEAR INVERTED',
+    theme: ThemeButton.CLEAR_INVERTED,
+  },
 };

@@ -11,10 +11,20 @@ export default ({ config }: { config: webpack.Configuration }) => {
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
   };
-  config.resolve.modules.push(paths.src);
-  config.resolve.extensions.push('.ts', '.tsx');
 
-  config.module.rules.push(buildCssLoader(true));
+  if (config.resolve?.extensions && config.resolve?.modules) {
+    
+    config.resolve.modules.push(paths.src);
+    config.resolve.extensions.push('.ts', '.tsx');
+  }
+
+  if (config.module?.rules) {
+    config.module.rules.push(buildCssLoader(true));
+  }
+
+  // config.resolve.modules.push(paths.src);
+  // config.resolve.extensions.push('.ts', '.tsx');
+  //config.module.rules.push(buildCssLoader(true));
 
   return config;
 };

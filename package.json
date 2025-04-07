@@ -7,8 +7,8 @@
     "build:dev": "webpack --env mode=development",
     "start": "webpack serve --env port=3000 ",
     "unit": "jest --config ./config/jest/jest.config.ts",
-    "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "build-storybook": "build-storybook -c ./config/storybook"
+    "storybook": "sb dev --config-dir ./config/storybook",
+    "build-storybook": "sb build --config-dir ./config/storybook"
   },
   "keywords": [],
   "author": "",
@@ -26,10 +26,17 @@
   },
   "devDependencies": {
     "@babel/core": "7.23.2",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.27.0",
     "@storybook/addon-essentials": "7.6.6",
+    "@storybook/addon-interactions": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/addon-themes": "^7.6.6",
     "@storybook/builder-webpack5": "7.6.6",
+    "@storybook/cli": "^7.6.6",
     "@storybook/core-server": "7.6.6",
     "@storybook/react": "7.6.6",
+    "@storybook/react-webpack5": "^7.6.6",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "6.1.5",
     "@testing-library/react": "14.2.1",

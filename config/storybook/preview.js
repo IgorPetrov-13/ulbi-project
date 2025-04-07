@@ -1,4 +1,3 @@
-import { addDecorator } from '@storybook/react';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 
 export const parameters = {
@@ -11,4 +10,9 @@ export const parameters = {
   },
 };
 
-addDecorator(StyleDecorator);
+// Используем декоратор для всех историй
+// export const decorators = [
+//   (Story) => <StyleDecorator>{Story()}</StyleDecorator>,
+// ];
+
+export const decorators = [StyleDecorator];
