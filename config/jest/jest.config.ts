@@ -31,7 +31,7 @@ const config: Config = {
   },
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: ['@testing-library/jest-dom'],
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
 
   modulePaths: ['<rootDir>/src'],
 
@@ -41,6 +41,9 @@ const config: Config = {
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
 
+  globals: {
+    __IS_DEV__: true,
+  },
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
