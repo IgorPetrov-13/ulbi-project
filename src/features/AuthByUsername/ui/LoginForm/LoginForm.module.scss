@@ -1,0 +1,63 @@
+.LoginForm {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 5px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.error {
+  color: red;
+}
+
+.loginBtn {
+  padding: 5px;
+  cursor: pointer;
+  background-color: var(--inverted-primary-color);
+  border: none;
+  color:var(--primary-color);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.loginBtn:hover {
+  background-color: var(--inverted-primary-color);
+  opacity: 1;
+}
+
+.loginBtn:active {
+  background-color: var(--inverted-primary-color);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.loginBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.loginBtn:focus {
+ // border: 2px solid  var(--inverted-primary-color); /* Цвет рамки */
+  box-shadow: 0 0 5px var(--inverted-primary-color)(0, 123, 255, 0.5); /* Тень */
+  //background-color: #f0f8ff; /* Цвет фона */
+  outline: none; /* Убираем стандартный outline */
+  //color: #333; /* Цвет текста */
+}
+
+input:focus {
+  border: 2px solid  var(--inverted-primary-color); /* Цвет рамки */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Тень */
+  background-color: #f0f8ff; /* Цвет фона */
+  outline: none; /* Убираем стандартный outline */
+  color: #333; /* Цвет текста */
+}

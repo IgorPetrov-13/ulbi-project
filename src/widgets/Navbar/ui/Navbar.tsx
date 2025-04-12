@@ -6,6 +6,7 @@ import { ThemeSwitcher } from 'widgets/ ThemeSwitcher';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Modal } from 'shared/ui/Modal/Modal';
+import { LoginModal } from 'features/AuthByUsername';
 
 interface NavbarProps {
   className?: string;
@@ -14,8 +15,12 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
   const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
 
-  const onToggleModal = useCallback(() => {
-    setIsAuthModal((prevState) => !prevState);
+  const onCloseModal = useCallback(() => {
+    setIsAuthModal(false);
+  }, []);
+
+  const onOpenModal = useCallback(() => {
+    setIsAuthModal(true);
   }, []);
 
   return (
@@ -28,10 +33,11 @@ export const Navbar = ({ className }: NavbarProps) => {
         <AppLink to={RoutePath.main} className={cls.link}>
           Main
         </AppLink>
-        <Button onClick={onToggleModal} theme={ThemeButton.CLEAR_INVERTED}>
+        <Button onClick={onOpenModal} theme={ThemeButton.CLEAR_INVERTED}>
           Auth
         </Button>
-        <Modal isOpen={isAuthModal} onClose={onToggleModal} />
+        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+        
       </div>
     </div>
   );

@@ -1,9 +1,7 @@
-export interface CounterStateSchema {
-  value: number;
-}
+import { UserSchema } from "entities/User";
 
 export interface StateSchema {
-  counter: CounterStateSchema;
+  user: UserSchema;
 }
 
 export interface ThunkExtraArg {
